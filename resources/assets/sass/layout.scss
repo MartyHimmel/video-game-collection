@@ -1,0 +1,16 @@
+.sidebar {
+	position: relative;
+	overflow-y: auto;
+	margin-top: $navbar-height;
+
+	@media only screen and (min-width: $break-sm) {
+		height: 100vh;
+	}
+}
+
+.main {
+	position: relative;
+	height: 100vh;
+	overflow-y: auto;
+	margin-top: $navbar-height;
+}
