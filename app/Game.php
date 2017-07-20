@@ -7,10 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
     const PLATFORMS = [
+        '3do' => '3DO',
+        'jaguar' => 'Atari Jaguar',
+        'jaguarcd' => 'Atari Jaguar CD',
+        'dreamcast' => 'Dreamcast',
         'gameboy' => 'Game Boy',
         'gba' => 'Game Boy Advance',
         'gbc' => 'Game Boy Color',
+        'gamecube' => 'GameCube',
         'gamegear' => 'Game Gear',
+        'lynx' => 'Lynx',
+        'neogeo' => 'Neo Geo',
+        'neogeocd' => 'Neo Geo CD',
+        'neogeopocket' => 'Neo Geo Pocket',
         'nes' => 'NES',
         '3ds' => 'Nintendo 3DS',
         'n64' => 'Nintendo 64',
