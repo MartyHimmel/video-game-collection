@@ -23,7 +23,7 @@
 
 			<div class="col-sm-4 col-xs-12">
 				<p>Title: {{ $game->name }}</p>
-				<p>Platform: {{ $game->platform }}</p>
+				<p>Platform: {{ \GameCollection\Game::PLATFORMS[$game->platform] }}</p>
 				<p>Developer: {{ $game->developer }}</p>
 				<p>Publisher: {{ $game->publisher }}</p>
 				<p>Release Date: {{ $game->release_date }}</p>
