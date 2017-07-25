@@ -29,11 +29,13 @@
 				<p>Release Date: {{ $game->release_date }}</p>
 				<p>Region: {{ implode(', ', $game->region) }}</p>
 				<p>Genre: {{ $game->genre }}</p>
-				<p>
-					<a href="{{ url('/games/' . $game->id . '/edit') }}">
-						<button type="button" class="btn btn-primary">Edit Game</button>
-					</a>
-				</p>
+				@if (Auth::user()->role == 'admin')
+					<p>
+						<a href="{{ url('/games/' . $game->id . '/edit') }}">
+							<button type="button" class="btn btn-primary">Edit Game</button>
+						</a>
+					</p>
+				@endif
 			</div>
 			<div class="col-sm-8 col-xs-12">
 				
