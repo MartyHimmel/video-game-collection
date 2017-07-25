@@ -37,7 +37,7 @@
 								@continue
 							@endif
 							<tr>
-								<td>{{ $platform_text }}</td>
+								<td><a href="{{ url('/' . $platform_key) }}">{{ $platform_text }}</a></td>
 								<td>{{ $game_counts[$platform_key]['games'] }}</td>
 								<td>{{ $game_counts[$platform_key]['boxes'] }}</td>
 								<td>{{ $game_counts[$platform_key]['manuals'] }}</td>
