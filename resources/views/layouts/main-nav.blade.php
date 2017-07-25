@@ -15,6 +15,10 @@
 		</div>
 
 		<div class="collapse navbar-collapse" id="app-navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="{{ url('/games/create') }}">Create Game</a></li>
+			</ul>
+
 			<ul class="nav navbar-nav navbar-right">
 				@if (Auth::guest())
 					<li><a href="{{ route('login') }}">Login</a></li>
