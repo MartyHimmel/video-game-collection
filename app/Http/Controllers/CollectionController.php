@@ -13,7 +13,7 @@ class CollectionController extends Controller
 		}
 		
 		$platform_name = \GameCollection\Game::PLATFORMS[$platform];
-		$region = is_null(request()->input('region')) ? 'NA' : request()->input('region');
+		$region = empty(request()->input('region')) ? 'NA' : request()->input('region');
 		return view('gamelists.index')->with([
 			'title' => $platform_name . ' Games',
 			'games' => \GameCollection\Game::platform($platform)

@@ -74,7 +74,7 @@ class Game extends Model
     }
 
     public function scopeRegion($query, $region) {
-        return $query->where('region', $region);
+        return $query->where('region', 'like', "%$region%");
     }
 
     public function scopePlatform($query, $platform) {
@@ -83,5 +83,13 @@ class Game extends Model
 
     public function scopePlatformCount($query, $platform) {
         return $query->where('platform', $platform)->count();
+    }
+
+    public function getRegionAttribute($region) {
+        return explode(',', $region);
+    }
+
+    public function setRegionAttribute($regions) {
+        $this->attributes['region'] = implode(',', $regions);
     }
 }

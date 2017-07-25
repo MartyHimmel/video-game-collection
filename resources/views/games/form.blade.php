@@ -32,16 +32,19 @@
 		 value="{{ $game->release_date or old('game_release_date') }}">
 </div>
 <div class="form-group">
-	<label for="game_region">Region</label>
-	<select name="game_region" class="form-control">
-		@foreach (\GameCollection\Game::REGIONS as $region_key => $region_name)
-			<option value="{{ $region_key }}" 
-			@if ((isset($game) && $game->region == $region_key) || old('game_region') == $region_key)
-				selected
-			@endif
-			>{{ $region_name }}</option>
-		@endforeach
-	</select>
+	<label>Region</label>
+	@foreach (\GameCollection\Game::REGIONS as $region_key => $region_name)
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" name="game_region[]" class="checkbox" value="{{ $region_key }}" 
+				@if ((isset($game) && in_array($region_key, $game->region)) ||
+						in_array($region_key, old('game_region', [])))
+					checked
+				@endif
+				> {{ $region_name }}
+			</label>
+		</div>
+	@endforeach
 </div>
 <div class="form-group">
 	<label for="game_genre">Genre</label>

@@ -27,7 +27,7 @@
 				<p>Developer: {{ $game->developer }}</p>
 				<p>Publisher: {{ $game->publisher }}</p>
 				<p>Release Date: {{ $game->release_date }}</p>
-				<p>Region: {{ $game->region }}</p>
+				<p>Region: {{ implode(', ', $game->region) }}</p>
 				<p>Genre: {{ $game->genre }}</p>
 				<p>
 					<a href="{{ url('/games/' . $game->id . '/edit') }}">
