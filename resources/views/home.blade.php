@@ -33,11 +33,14 @@
 					</thead>
 					<tbody>
 						@foreach($platforms as $platform_key => $platform_text)
+							@if (!$game_counts[$platform_key]['in_collection'])
+								@continue
+							@endif
 							<tr>
 								<td>{{ $platform_text }}</td>
-								<td>{{ Auth::user()->game_count($platform_key) }}</td>
-								<td>{{ Auth::user()->box_count($platform_key) }}</td>
-								<td>{{ Auth::user()->manual_count($platform_key) }}</td>
+								<td>{{ $game_counts[$platform_key]['games'] }}</td>
+								<td>{{ $game_counts[$platform_key]['boxes'] }}</td>
+								<td>{{ $game_counts[$platform_key]['manuals'] }}</td>
 							</tr>
 						@endforeach
 					</tbody>
