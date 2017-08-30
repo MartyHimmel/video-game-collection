@@ -16,7 +16,7 @@
 
 		<div class="collapse navbar-collapse" id="app-navbar-collapse">
 			<ul class="nav navbar-nav">
-				@if (Auth::user()->role == 'admin')
+				@if (Auth::check() && Auth::user()->role == 'admin')
 					<li><a href="{{ url('/games/create') }}">Create Game</a></li>
 				@endif
 			</ul>
