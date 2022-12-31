@@ -13,6 +13,6 @@
     "axios": "^0.19.2",
     "bootstrap-sass": "^3.4.1",
     "jquery": "^3.5.0",
-    "laravel-mix": "^5.0.4"
+    "laravel-mix": "^6.0.49"
   }
 }
